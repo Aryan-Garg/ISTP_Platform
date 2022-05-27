@@ -79,15 +79,15 @@
 			<div id="Discussion-Threads">
 				<button type="button" class="btn btn-primary" onclick="createNewThread()">Start New Thread</button>
 				
-				<button type="button" class="btn btn-primary">Latest</button>
+				<button type="button" class="btn btn-primary">Search by Author</button>
 				
-				<button type="button" class="btn btn-primary">Search by Tags</button>
+				<button type="button" class="btn btn-primary" onclick="searchByTags()">Search by Tags</button>
 				
 			</div>	
 			<div id="threads-aryan">
 				<center>
 				<div class="card text-bg-light mb-3" style="max-width: 97%;">
-					<div class="card-header">Discussion Thread</div>
+					<div class="card-header">Sample Discussion Thread</div>
 					<div class="card-body">
 					<h5 class="card-title">Light card title</h5>
 					<p class="card-text">Tags + Contributors</p>
@@ -95,7 +95,7 @@
 					</div>
 				</div>
 				<div class="card text-bg-light mb-3" style="max-width: 97%;">
-					<div class="card-header">Discussion Thread</div>
+					<div class="card-header">Sample Discussion Thread</div>
 					<div class="card-body">
 					<h5 class="card-title">LCAS</h5>
 					<p class="card-text">Tags + Contributors</p>
@@ -228,11 +228,11 @@
 			}
 			
 			function putThreadTitle(title, author, tags){
-				console.log(title, author, tags);
+				// console.log(title, author, tags);
 				if(author == "") author = "Anonymous";
 				if(tags == "") tags = "No tags"; 
 				var card = document.createElement("div");
-				card.innerHTML = "<center><div class=\"card text-bg-light mb-3\" style=\"max-width: 97%;\"><div class=\"card-header\">Discussion Thread</div><div class=\"card-body\"><h5 class=\"card-title\">" + title +"</h5><p class=\"card-text\"><b>" + author + "</b> : " + tags + "</p><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@fat\">Discuss</button></div></div></center>";
+				card.innerHTML = "<center><div class=\"card text-bg-light mb-3\" style=\"max-width: 97%;\"><div class=\"card-header\">Discussion Thread</div><div class=\"card-body\"><h5 class=\"card-title\">" + title +"</h5><p class=\"card-text\"><b><em>" + author + "</em></b>" + "<div class=\"tagzz\">" + tags + "</div>" + "</p><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@fat\">Discuss</button></div></div></center>";
 				return card;
 			}
 			
@@ -253,6 +253,48 @@
 				}
 				// console.log("Clicked!!!");
 			}
+			function removeAll(){
+				var element = document.getElementById("threads-aryan");
+				while (element.lastElementChild) {
+					element.removeChild(element.lastElementChild);
+				}
+			}
+			
+			function putFiltered(arr){
+				var element = document.getElementById("threads-aryan");
+				for(var i = 0; i < arr.length; i++) pushMe(arr[i]);
+			}
+			
+			// TODO: Store index and class name: taggz and also whole card div
+			function searchByTags() {
+				let userTags = prompt("Search tags: (separated by spaces)");
+				var arr = userTags.split(/\s+/);
+				for (var i = 0; i < userTags.length; i++) arr[i] = arr[i].toLowerCase();
+				
+				var eles = document.getElementsByClassName('tagzz');
+				var toRetEles = [];
+				for(var i = 0; i < eles.length; i++){
+					bigStr = eles[i].textContent;
+					arrCheck = bigStr.split(/\s+/);
+					for (var j = 0; j < arrCheck.length; j++) arrCheck[j] = arrCheck[j].toLowerCase();
+					for (var k = 0; k < arrCheck.length; k++){
+						for(var a = 0; a < arr.length; a++){
+							var found = false;
+							if (arrCheck[k] == arr[a]){
+								toRetEles.push(eles[i]);
+								found = true;
+								break;
+							}
+						}
+						if(found) break;
+					}
+				}
+				console.log(toRetEles);
+				removeAll();
+				putFiltered(toRetEles);
+				return toRetEles;
+			}
+			
 		</script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
