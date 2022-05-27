@@ -1,8 +1,8 @@
 <?php
     session_start();
     include('connect.php');
-    if(!isset($_SESSION['user']))
-        header("location: login.php");
+    // if(!isset($_SESSION['user']))
+    //    header("location: login.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +14,34 @@
         <link type="text/css" rel="stylesheet" href="css/material.css">
         <link type="text/css" rel="stylesheet" href="fonts/font.css">
         <link rel="icon" href="images/icon1.png" >
+        <!-- Sripts -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <style>
+            textarea{
+                display: none;
+                width: 300px;
+                height: 50px;
+                background: #333;
+                color: #ddd;
+                padding: 10px;
+                margin: 5px 0 -14px; 
+            }
+            .ans_sub{
+                display: none;
+                padding: 0 10px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .pop{
+                display: none;
+                text-align: center;
+                margin: 195.5px auto;
+                font-size: 12px;
+            }
+        </style>
     </head>
-    <body id="global forum">
+    <body id="_3">
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
@@ -24,96 +50,157 @@
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li>Home</li></a>
-			<a href="globalForum.php"><li>Global Forum</li></a>
+			<a href="globalForum.php"><li id="home">Global Forum</li></a>
             <a href="categories.php"><li>Categories</li></a>
             <a href="contacts.php"><li>Contact</li></a>
-            <a href="ask.php"><li id="home">Ask Question</li></a>
+            <a href="ask.php"><li>Ask Question</li></a>
+            <?php 
+                if(! isset($_SESSION['user'])){
+            ?>
+            <a href="login.php"><li>Log In</li></a>
+            <a href="signup.php"><li>Sign Up</li></a>
+            <?php
+                }
+                else{
+            ?>
             <a href="profile.php"><li>Hi, <?php echo $_SESSION["user"]; ?></li></a>
             <a href="logout.php"><li>Log Out</li></a>
+            <?php
+                }
+            ?>
         </ul>
         
         <!-- content -->
         <div id="content">
-            <div id="sf">
+            <h4>
+                <a id="title-head" href="categories.php">Global Forum</a>
+            </h4>
+            <div id="box0">
                 <center>
-                    <div class="heading ask">
-                        <h1 class="logo"><div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div></h1>
-                        <p id="tag-line">where questions are themselves the answers</p>
-                    </div>
-
-                    <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post" enctype="multipart/form-data">
-
-                        <input name="question" type="text" title="Your Question..." placeholder="Ask Your question on our Community for greate user expereince..." id="question">
-
-                        <select name="cat">
-                            <option valus="Category">Category</option>
-                            <option value="Algorithms">Algorithms</option>
-                            <option value="Architecture">Architecture</option>
-                            <option value="Theory Of Computation">TOC</option>
-                            <option value="Database Management">DBMS</option>
-                            <option value="Probability &amp; Queuing">PQT</option>
-                            <option value="Software Engineering">SE</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <input name="submit" type="submit" class="up-in" id="ask_submit">
-                    </form>
+                    <a id="ada" href="#box1">
+                        <div id="algo" class="img">
+                            <div id="p" title="Open">Thread 1</div>
+                        </div>
+                    </a>
+                    <a id="cso" href="#box2">
+                        <div id="archi" class="img">
+                            <div id="p" title="Open">Thread 2</div>
+                        </div>
+                    </a>
+                    <a id="t" href="#box3">
+                        <div id="toc" class="img">
+                            <div id="p" title="Open">Thread 3</div>
+                        </div>
+                    </a>
+                </center>
+                <center>
+                    <a id="db" href="#box4">
+                        <div id="database" class="img">
+                            <div id="p" title="Open">Thread 4</div>
+                        </div>
+                    </a>
+                    <a id="pqt" href="#box5">
+                        <div id="prob" class="img">
+                            <div id="p" title="Open">Thread 5</div>
+                        </div>
+                    </a>
+                    <a id="se" href="#box6">
+                        <div id="soft" class="img">
+                            <div id="p" title="Open">Thread 6</div>
+                        </div>
+                    </a>
                 </center>
             </div>
-        </div>
-        
-        <div id="ask-ta">
-            <h1>Thank You.<br>Stay tunned for updates.</h1>
-        </div>
-        
-        <?php
-        
-            if( isset( $_POST["submit"] ) )
-            {
+            <div class="pop" id="tb">
+                <center><h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">:)</b>Thank You For Your Answer.</h1></center>
+            </div>
+            <center>
+                <?php
+                    $no = 1;
+                    $n = 1;
+                    $nul=0; 
+                    while($no < 7){
+                ?>
+                <div id="box<?php echo $no; ?>" class="open">
+                    <a href=""><div id="close">X</div></a>
+                    <div id="topic">
+                        <?php 
+                            echo "<h2 id='topic-head'>";
+                            $q = 'select name, description from category where id='.$no;
+                            $r = mysqli_query($conn,$q);
 
-                function valid($data){
-                    $data=trim(stripslashes(htmlspecialchars($data)));
-                    return $data;
+                            $d = mysqli_fetch_assoc($r);
+                            echo $d['name'].'</h2><p id="topic-desc">'.$d['description']."<br>Explore our home page for more questions.</p>";
+                        ?>
+                    </div>
+                    
+                    <center>
+                        <?php
+                            $qu = "select q.question, q.answer, q.askedby, q.answeredby from quans as q, quacat as r, category as c where q.id=r.id and r.category=c.name and c.id='$no' Limit 8";
+                            $re = mysqli_query($conn,$qu);
+                            while($da = mysqli_fetch_assoc($re)){
+                        ?>
+                        <div id="qa-block">
+                            <div class="question">
+                                <div id="Q">Q.</div>
+                                <?php echo $da['question']."<small id='sml'>Asked By: @".$da['askedby']."</small>"; ?>
+                            </div>
+                            <div class="answer">
+                                <?php 
+                                    if($da["answer"]){
+                                        $nul=0;
+                                        echo $da["answer"]."<br><small>Answered By: @".$da['answeredby']."</small>";
+                                    }
+                                    else{
+                                        $nul=1;
+                                        echo "<em>*** Not Answered Yet ***</em>";
+                                    }
+                                ?>
+                                
+                                <form id="f<?php echo $n; ?>" style="margin-bottom: -25px;" action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post" enctype="multipart/form-data">
+<!--                                    <input type="button" value="Click here to answer." id="ans_b" >-->
+                                    <label style="margin-bottom: -25px;"><a id="ans_b<?php echo $n; ?>" href="#area<?php echo $no; ?>"><u>Submit your answer</u></a></label>
+                                    <br>
+                                    <script>
+                                        $(function(){
+                                            $('#ans_b<?php echo $n; ?>').click(function(e){
+                                                e.preventDefault();
+                                                $('#area<?php echo $n; ?>').css("display","block");
+                                                $('#ar<?php echo $n; ?>').css("display","block");
+                                                $('#f<?php echo $n; ?>').css("margin-bottom","0px");
+                                            });
+                                        });
+                                    </script>
+                                    <textarea id="area<?php echo $n; ?>" name="answer" placeholder="Your Answer..."></textarea>
+                                    <input style="display: none;" name="question" value="<?php echo $da['question'] ?>">
+                                    <input style="display: none;" name="nul" value="<?php echo $nul ?>">
+                                    <input style="display: none;" name="preby" value="<?php echo $da['answeredby'] ?>">
+                                    <br>
+                                    <input type="submit" name="ansubmit" value="Submit" class="up-in ans_sub" id="ar<?php echo $n; ?>">
+                                    
+                                </form>
+                                
+
+                                
+                            </div>
+                        </div>
+                        <?php $n++; } ?>
+                    </center>
+                    
+                </div><!-- box1 -->
+                <?php
+                    $no++;
                 }
-                $question = valid( $_POST["question"] );
-                
-                $no = valid( $_POST["cat"]);
-                $question = addslashes($question);
-                $q = "SELECT * FROM quans WHERE question = '$question'";
-                $result = mysqli_query($conn,$q);
-                if(mysqli_error($conn))
-                    echo "<script>window.alert('Some Error Occured. Try Again or Contact Us.');</script>";
-                else if( $no == "Category"){
-                    echo "<script>window.alert('Choose a Category.');</script>";
-                }
-                else if( mysqli_num_rows($result) == 0 ){
-                    $query = "INSERT INTO quans VALUES(NULL, '$question', NULL,'".$_SESSION['user']."',NULL)";
-                    $query1 = "INSERT INTO quacat SELECT q.id, c.name FROM quans as q, category as c WHERE q.question = '".$question."' AND c.name = '".$_POST['cat']."'";
-                    mysqli_query( $conn, $query);
-                    if(mysqli_query( $conn, $query1)){
-                        echo "<style>#sf{display: none;} #ask-ta{display:block;}</style>";
-                    }
-                    else{
-                        echo "<script>window.alert('Some Error Occured. Try Again or Contact Us.');</script>";
-                    }
-                }
-                else{
-                    echo "<script>window.alert('Question was already Asked. Search it on Home Page.');</script>";
-                }
-                
-                mysqli_close($conn);
-            }
-        
-        ?>
+                ?>
+            </center>
+            
+        </div><!-- content -->
         
         <!-- Footer -->
-        <div id="footer" style="padding:30px;">
+        <div id="footer">
             &copy; 2017 &bull; Interrogate Inc.
         </div>
         
-        <!-- Sripts -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-3.2.1.min.js"><\/script>')</script>
-        <script type="text/javascript" src="js/script.js"></script>
         
     </body>
     
