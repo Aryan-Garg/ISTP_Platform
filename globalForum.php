@@ -221,14 +221,18 @@
 			function askUser(){
 				let title = prompt("Discussion Thread Title:");
 				let name = prompt("Your name:");
+				let tags = prompt("Thread tags: (separated by spaces)")
 				var doFlag = true;
 				if (title == null) doFlag = false;
-				return [title, name, doFlag];
+				return [title, name, doFlag, tags];
 			}
 			
-			function putThreadTitle(title, author){
+			function putThreadTitle(title, author, tags){
+				console.log(title, author, tags);
+				if(author == "") author = "Anonymous";
+				if(tags == "") tags = "No tags"; 
 				var card = document.createElement("div");
-				card.innerHTML = "<center><div class=\"card text-bg-light mb-3\" style=\"max-width: 97%;\"><div class=\"card-header\">Discussion Thread</div><div class=\"card-body\"><h5 class=\"card-title\">" + title +"</h5><p class=\"card-text\">" + author + " + Tags</p><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@fat\">Discuss</button></div></div></center>";
+				card.innerHTML = "<center><div class=\"card text-bg-light mb-3\" style=\"max-width: 97%;\"><div class=\"card-header\">Discussion Thread</div><div class=\"card-body\"><h5 class=\"card-title\">" + title +"</h5><p class=\"card-text\"><b>" + author + "</b> : " + tags + "</p><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@fat\">Discuss</button></div></div></center>";
 				return card;
 			}
 			
@@ -242,8 +246,9 @@
 				// info[0] -> title of thread; 
 				// info[1] -> name of the author
 				// info[2] -> doFlag
+				// info[3] -> tags
 				if(info[2]) {
-					card = putThreadTitle(info[0], info[1]); // create the card
+					card = putThreadTitle(info[0], info[1], info[3]); // create the card
 					pushMe(card);
 				}
 				// console.log("Clicked!!!");
