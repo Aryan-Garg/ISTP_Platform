@@ -77,13 +77,17 @@
                 <a id="title-head" href="categories.php">Global Forum</a>
             </h4>
 			<div id="Discussion-Threads">
-				<button type="button" class="btn btn-primary">Start New Thread</button>
+				<button type="button" class="btn btn-primary" onclick="createNewThread()">Start New Thread</button>
+				
 				<button type="button" class="btn btn-primary">Latest</button>
+				
 				<button type="button" class="btn btn-primary">Search by Tags</button>
+				
 			</div>	
+			<div id="threads-aryan">
 				<center>
 				<div class="card text-bg-light mb-3" style="max-width: 97%;">
-					<div class="card-header">Thread 1</div>
+					<div class="card-header">Discussion Thread</div>
 					<div class="card-body">
 					<h5 class="card-title">Light card title</h5>
 					<p class="card-text">Tags + Contributors</p>
@@ -91,7 +95,7 @@
 					</div>
 				</div>
 				<div class="card text-bg-light mb-3" style="max-width: 97%;">
-					<div class="card-header">Thread 2</div>
+					<div class="card-header">Discussion Thread</div>
 					<div class="card-body">
 					<h5 class="card-title">LCAS</h5>
 					<p class="card-text">Tags + Contributors</p>
@@ -99,7 +103,7 @@
 					</div>
 				</div>
 				</center>
-				
+			</div>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -213,7 +217,38 @@
         <div id="footer">
             &copy; 2022 &bull; ISTP Project.
         </div>
-        
+        <script>
+			function askUser(){
+				let title = prompt("Discussion Thread Title:");
+				let name = prompt("Your name:");
+				var doFlag = true;
+				if (title == null) doFlag = false;
+				return [title, name, doFlag];
+			}
+			
+			function putThreadTitle(title, author){
+				var card = document.createElement("div");
+				card.innerHTML = "<center><div class=\"card text-bg-light mb-3\" style=\"max-width: 97%;\"><div class=\"card-header\">Discussion Thread</div><div class=\"card-body\"><h5 class=\"card-title\">" + title +"</h5><p class=\"card-text\">" + author + " + Tags</p><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@fat\">Discuss</button></div></div></center>";
+				return card;
+			}
+			
+			function pushMe(card) {
+				var element = document.getElementById("threads-aryan");
+				element.appendChild(card);
+			}
+			
+			function createNewThread() {
+				info = askUser(); // store thread's name and author details
+				// info[0] -> title of thread; 
+				// info[1] -> name of the author
+				// info[2] -> doFlag
+				if(info[2]) {
+					card = putThreadTitle(info[0], info[1]); // create the card
+					pushMe(card);
+				}
+				// console.log("Clicked!!!");
+			}
+		</script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     
