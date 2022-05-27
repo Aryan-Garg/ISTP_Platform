@@ -59,8 +59,12 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/material.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="fonts/font.css">
         <link rel="icon" href="images/icon1.png" >
+        Sripts -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body id="_5">
         <!-- navigation bar -->
@@ -105,8 +109,9 @@
                     <i class="material-icons" id="person">person</i>
                     <div id="button-block">
                         <center>
-                            <div class="buttons"><input name="submit" type="submit" value="Log In" class="up-in"></div>
-                            <div class="buttons" id="new"><input type="button" value="Create a new account" class="up-in" id="tosign"></div>
+                       
+                            <div class="buttons"><input name="submit" type="submit" value="Log In" class="up-in btn btn-primary"></div>
+                            <div class="buttons" id="new"><input type="button" value="Create a new account" class="up-in btn btn-primary" id="tosign"></div>
                         </center>
                     </div>
                     <a href="contacts.php" id="trouble"><span>Having Trouble in login ? Contact Us</span></a>
@@ -117,14 +122,14 @@
         
         <!-- Footer -->
         <div id="footer">
-            &copy; 2017 &bull; Interrogate Inc.
+            &copy; 2022 &bull; ISTP Project.
         </div>
         
         <!-- Sripts -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-3.2.1.min.js"><\/script>')</script>
         <script type="text/javascript" src="js/script.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     
 </html>

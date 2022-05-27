@@ -17,6 +17,10 @@
         <link type="text/css" rel="stylesheet" href="css/material.css">
         <link type="text/css" rel="stylesheet" href="fonts/font.css">
         <link rel="icon" href="images/icon1.png" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- Sripts -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body id="_6">
         <!-- navigation bar -->
@@ -68,8 +72,8 @@
 
                         <div id="button-block">
                             <center>
-                                <div class="buttons"><input name="submit" type="submit" value="Create An Account" class="up-in"></div>
-                                <div class="buttons" id="new"><input type="button" value="Already a member : Log In" class="up-in" id="tolog"></div>
+                                <div class="buttons"><input name="submit" type="submit" value="Create An Account" class="up-in btn btn-primary"></div> 
+                                <div class="buttons" id="new"><input type="button" value="Log In" class="up-in btn btn-primary" id="tolog"></div>
                             </center>
                         </div>
                     </form>
@@ -117,14 +121,14 @@
         
         <!-- Footer -->
         <div id="footer" style="padding:20px;">
-            &copy; 2017 &bull; Interrogate Inc.
+            &copy; 2022 &bull; ISTP Project.
         </div>
         
         <!-- Sripts -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-3.2.1.min.js"><\/script>')</script>
         <script type="text/javascript" src="js/script.js"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     
 </html>

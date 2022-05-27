@@ -10,6 +10,10 @@
         <link type="text/css" rel="stylesheet" href="css/material.css">
         <link type="text/css" rel="stylesheet" href="fonts/font.css">
         <link rel="icon" href="images/icon1.png" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- Sripts -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body id="_4">
         <!-- navigation bar -->
@@ -54,10 +58,10 @@
                 <div id="text">
                     <h1>Interrogate Inc.</h1>
                     <p style="line-height: 20px;">
-                        <a href="mailto:interrogateincorporate@gmail.com">interrogateincorporate@gmail.com</a><br>
-                        Contact: +91 (***) ***-****<br>
-                        Site By: <a href=https://shivam010.in>https://shivam010.in</a><br>
-                        Social: <a href="https://github.com/Shivam010">Github@Shivam010</a><br>
+                        Sriram Kailasam<br><a href="mailto:sriram@iitmandi.ac.in">sriram@iitmandi.ac.in</a><br>
+                        Contact: +91 8894275490<br>
+                        
+                        Social: <a href="https://github.com/Aryan-Garg/ISTP_Platform">Github@Aryan</a><br>
                         License: <a href=http://interrogate.herokuapp.com/LICENSE>MIT</a>
                     </p>
                 </div>
@@ -67,9 +71,9 @@
     
         <!-- Footer -->
         <div id="footer">
-            &copy; 2017 &bull; Interrogate Inc.
+            &copy; 2022 &bull; ISTP Project.
         </div>
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     
 </html>

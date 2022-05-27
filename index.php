@@ -218,7 +218,7 @@
         </div>
         <!-- Footer -->
         <div id="footer">
-            &copy; 2017 &bull; Interrogate Inc.
+            &copy; 2022 &bull; ISTP Project.
         </div>
         
     </body>
