@@ -82,40 +82,12 @@
 				<button type="button" class="btn btn-primary">Search by Tags</button>
 			</div>
             <div id="box0">
-                <center>
-                    <a id="ada" href="#box1">
-                        <div id="algo" class="img">
-                            <div id="p" title="Open">Thread 1</div>
-                        </div>
-                    </a>
-                    <a id="cso" href="#box2">
-                        <div id="archi" class="img">
-                            <div id="p" title="Open">Thread 2</div>
-                        </div>
-                    </a>
-                    <a id="t" href="#box3">
-                        <div id="toc" class="img">
-                            <div id="p" title="Open">Thread 3</div>
-                        </div>
-                    </a>
-                </center>
-                <center>
-                    <a id="db" href="#box4">
-                        <div id="database" class="img">
-                            <div id="p" title="Open">Thread 4</div>
-                        </div>
-                    </a>
-                    <a id="pqt" href="#box5">
-                        <div id="prob" class="img">
-                            <div id="p" title="Open">Thread 5</div>
-                        </div>
-                    </a>
-                    <a id="se" href="#box6">
-                        <div id="soft" class="img">
-                            <div id="p" title="Open">Thread 6</div>
-                        </div>
-                    </a>
-                </center>
+                    <a><div>Thread 1</div></a>
+					<a><div>Thread 2</div></a>
+					<a><div>Thread 3</div></a>
+					<a><div>Thread 4</div></a>
+					<a><div>Thread 5</div></a>
+					<a><div>Thread 6</div></a>
             </div>
             <div class="pop" id="tb">
                 <center><h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">:)</b>Thank You For Your Answer.</h1></center>
