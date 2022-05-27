@@ -76,18 +76,33 @@
             <h4>
                 <a id="title-head" href="categories.php">Global Forum</a>
             </h4>
-			<div id="Buttons">
+			<div id="Discussion-Threads">
 				<button type="button" class="btn btn-primary">Start New Thread</button>
 				<button type="button" class="btn btn-primary">Latest</button>
 				<button type="button" class="btn btn-primary">Search by Tags</button>
 			</div>
             <div>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 1</button>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 2</button>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 3</button>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 4</button>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 5</button>
-				<button type="button" class="btn btn-light btn-lg btn-block">Thread 6</button>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Thread - 1</h5>
+							<p class="card-text">Tags + First Post</p>
+							<a href="#" class="btn btn-primary">Discuss</a>
+						</div>
+						</div>
+					</div>
+				<div class="col-sm-6">
+					<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Thread - 2</h5>
+						<p class="card-text">Tags + First Post</p>
+						<a href="#" class="btn btn-primary">Discuss</a>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
             </div>
             <div class="pop" id="tb">
                 <center><h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">:)</b>Thank You For Your Answer.</h1></center>
