@@ -81,13 +81,13 @@
 				<button type="button" class="btn btn-primary">Latest</button>
 				<button type="button" class="btn btn-primary">Search by Tags</button>
 			</div>
-            <div id="box0">
-                    <a><div>Thread 1</div></a>
-					<a><div>Thread 2</div></a>
-					<a><div>Thread 3</div></a>
-					<a><div>Thread 4</div></a>
-					<a><div>Thread 5</div></a>
-					<a><div>Thread 6</div></a>
+            <div>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 1</button>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 2</button>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 3</button>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 4</button>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 5</button>
+				<button type="button" class="btn btn-light btn-lg btn-block">Thread 6</button>
             </div>
             <div class="pop" id="tb">
                 <center><h1><b style="font-size: 1.5em; margin: -60px auto 10px; display: block;">:)</b>Thank You For Your Answer.</h1></center>
