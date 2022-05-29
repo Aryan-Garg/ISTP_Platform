@@ -266,6 +266,7 @@
 			}
 			
 			// TODO: Store index and class name: taggz and also whole card div
+			// Change this!!! Search.
 			function searchByTags() {
 				let userTags = prompt("Search tags: (separated by spaces)");
 				var arr = userTags.split(/\s+/);
