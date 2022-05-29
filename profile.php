@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Interrogate </title>
+        <title> CollabHub </title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/material.css">
@@ -21,15 +21,17 @@
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
-                <div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div>
+                <div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div>
             </div>
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li>Home</li></a>
 			<a href="globalForum.php"><li>Global Forum</li></a>
             <a href="categories.php"><li>Categories</li></a>
-            <a href="contacts.php"><li>Contact</li></a>
             <a href="ask.php"><li>Ask Question</li></a>
+            <a href="contacts.php"><li>Contact</li></a>
+            
+            
             <a href="profile.php"><li id="home">Hi, <?php echo $_SESSION["user"]; ?></li></a>
             <a href="logout.php"><li>Log Out</li></a>
         </ul>
@@ -51,7 +53,7 @@
             </div>
         </center>
         </div>
-    
+        <br><br><br><br><br><br>
         <!-- Footer -->
         <div id="footer">
             &copy; 2022 &bull; ISTP Project.

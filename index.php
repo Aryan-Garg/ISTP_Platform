@@ -31,11 +31,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Interrogate </title>
+        <title> CollabHub </title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="css/material.css">
-        <link type="text/css" rel="stylesheet" href="fonts/font.css">
+        <link type="text/css" rel="stylesheet" href="css/material.css?v=1" />
+        <link type="text/css" rel="stylesheet" href="fonts/font.css?v=1" />
         <link rel="icon" href="images/icon1.png" >
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <style>
@@ -66,15 +66,15 @@
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
-                <div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div>
+                <div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div>
             </div>
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li id="home">Home</li></a>
 			<a href="globalForum.php"><li>Global Forum</li></a>
             <a href="categories.php"><li>Categories</li></a>
-            <a href="contacts.php"><li>Contact</li></a>
             <a href="ask.php"><li>Ask Question</li></a>
+            <a href="contacts.php"><li>Contact</li></a>
             <?php 
                 if(! isset($_SESSION['user'])){
             ?>
@@ -96,11 +96,11 @@
             <div id="searchbox">
                 <center>
                     <div class="heading">
-                        <h1 class="logo"><div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div></h1>
-                        <p id="tag-line">where questions are themselves the answers</p>
+                        <h1 class="logo"><div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div></h1>
+                        <p id="tag-line">A collaborative platform for teachers</p>
                     </div>
                     <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post" enctype="multipart/form-data" >
-                        <input name="text" id="search" type="text" title="Question your Answers" placeholder="Looking for Answers to Some Question, simply just search here... ">
+                        <input name="text" id="search" type="text" title="Question your Answers" placeholder="Search answer to your questions here... ">
                         <i class="material-icons" id="sign">search</i>
                         <input name="submit" type="submit" value="Search" class="up-in" id="qsearch">
                     </form>
@@ -216,10 +216,7 @@
                 } // isset for submit
             ?>
         </div>
-        <!-- Footer -->
-        <div id="footer">
-            &copy; 2022 &bull; ISTP Project.
-        </div>
+        
         
     </body>
     

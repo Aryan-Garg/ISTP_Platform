@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Interrogate </title>
+        <title> CollabHub </title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/material.css">
@@ -46,15 +46,16 @@
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
-                <div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div>
+                <div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div>
             </div>
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li>Home</li></a>
 			<a href="globalForum.php"><li id="home">Global Forum</li></a>
             <a href="categories.php"><li>Categories</li></a>
-            <a href="contacts.php"><li>Contact</li></a>
             <a href="ask.php"><li>Ask Question</li></a>
+            <a href="contacts.php"><li>Contact</li></a>
+            
             <?php 
                 if(! isset($_SESSION['user'])){
             ?>
@@ -74,7 +75,7 @@
         <!-- content -->
         <div id="content">
             <h4>
-                <a id="title-head" href="categories.php">Global Forum</a>
+                <a id="title-head" href="globalForum.php"> Global Forum</a>
             </h4>
 			<div id="Discussion-Threads">
 				<button type="button" class="btn btn-primary" onclick="createNewThread()">Start New Thread</button>
@@ -84,6 +85,7 @@
 				<button type="button" class="btn btn-primary" onclick="searchByTags()">Search by Tags</button>
 				
 			</div>	
+            <br>
 			<div id="threads-aryan">
 				<center>
 				<div class="card text-bg-light mb-3" style="max-width: 97%;">
@@ -295,8 +297,9 @@
 				putFiltered(toRetEles);
 				return toRetEles;
 			}
-			
+		
 		</script>
+        	
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
     

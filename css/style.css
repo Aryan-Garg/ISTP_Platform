@@ -6,16 +6,18 @@
 
 body{
     z-index: 1;
+    background-image: url('../images/bg2.png');
+    
     font-family: "Segoe UI",Arial,sans-serif;
-    font-size: 15px;
-    background: #ddd;
+    font-size: 15px;    
     min-width: 1000px;
     margin: 0 auto;
     font-weight: 500;
+    
 }
 
 a,a:hover{
-    color: #333;
+    color: #007FFF;
     cursor: pointer;
     text-decoration: none;
 }
@@ -39,7 +41,7 @@ a,a:hover{
     font-size: 31.25px;
 }
 #log #i{
-    color: #222;
+    color: #007FFF;
     font-size: 31.25px;
     left: 18.75px;
     font-weight: 800;
@@ -53,7 +55,7 @@ a,a:hover{
 #nav-bar{
     position: relative;
     box-sizing: border-box;
-    background: rgb(51, 51, 51);
+    background: #007FFF;
     font-size: 17px;
     font-weight: 500;
     text-align: right;
@@ -76,7 +78,7 @@ a li{
 }
 
 a li{
-    color: #ddd;
+    color: rgb(165, 194, 241);
 }
 
 a li:hover{
@@ -90,10 +92,10 @@ a li:hover{
 /* Content */
 #content{
     min-width: 900px;
-    color: #333;
+    color: #007FFF;
     box-sizing: border-box;
     padding: 100px 0;
-    background: #ddd;
+    
     margin-bottom: 20px;
 }
 
@@ -133,7 +135,7 @@ p#tag-line{
     display: inline-block;
     line-height: 85px;
     text-indent: 8px;
-    background: #333;
+    background: #007FFF;
     font-size: 50px;
     font-family: "LCALLIG";
     border-radius: 100%;
@@ -178,7 +180,7 @@ input[type="password"]:hover{
 /* Footer */
 #footer{
     display: block;
-    background: #333;
+    background-color: #007FFF;
     color: #ddd;
     text-align: center;
     font-size: 15px;
@@ -300,7 +302,7 @@ input[type="password"]:hover{
     font-size: 22px;
     height: 200px;
     line-height: 200px;
-    background: rgba(0, 0, 0, 0.7);
+    background: #007FFF;
     border-radius: 5px;
 }
 
@@ -364,7 +366,7 @@ hr{
     margin: -2px -15px 10px;
     padding: 10px;
     text-align: justify;
-    background: #333;
+    background: #007FFF;
     color: #ddd;
 }
 
@@ -384,7 +386,7 @@ hr{
 }
 
 #qa-block{
-    box-shadow: 0 0 10px #333;
+    box-shadow: 0 0 10px #007FFF;
     border-radius: 10px;
     margin: 10px;
 }
@@ -410,7 +412,7 @@ small#sml{
     font-size: 18px;
     text-align: left;
     color: #ddd;
-    background: #333;
+    background: #007FFF;
     padding: 0 5px 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -464,13 +466,13 @@ small#sml{
     line-height: 37px;
     padding: 0px 25px;
     color: #ddd;
-    background: #333;
+    background: #007FFF;
     border: none;
     border-radius: 2px;
 }
 .up-in:hover,select:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(18, 18, 18, 0.8);
+    box-shadow: 0px 0px 10px #007FFF;
 }
 
 #button-block{
@@ -479,7 +481,7 @@ small#sml{
 }
 
 #trouble{
-    color: #333;
+    color: #007FFF;
     position: relative;
     bottom: 80px;
     left: 104px;
@@ -560,19 +562,19 @@ a#try:hover{
 }
 
 #pro #content{
-    box-shadow: 0 0 10px #333;
+    box-shadow: 0 0 10px #007FFF;
     border-radius: 10px;
     margin: 30px auto;
     padding: 10px;
-    width: 700px;
-    background: rgb(228, 230, 231);
+    width: 500px;
+    background: #d8e3ee;
 }
 
 
 #hea{
-    box-shadow: 0 5px 8px rgba(51, 51, 51, 0.70);
-    color: #ddd;
-    background: #333;
+    
+    color: rgb(246, 246, 246);
+    background: #007FFF;
     display: block;
     font-family: LCALLIG;
     font-size: 32px;
@@ -580,27 +582,27 @@ a#try:hover{
     padding: 10px 10px 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: solid 3px #333; 
+    border-bottom: solid 3px #007FFF; 
 }
 
 #hea-det{
     float: right;
-    margin: 20px 0 5px;
+    margin: 10px 0 5px;
     font-size: 20px;
-    width: 400px;
-    padding: 148.1px 10px;
+    height: 300px;
+    width: 430px;
+    padding: 70px 10px;
     text-align: left;
 }
 
 #pic{
-    background: url(../images/blank3.png);
+    background: url(../images/blank3.jpg);
     background-size: 100%;
     float: left;
-    width: 400px;
-    height: 400px;
-    border-right: solid 5px #333;
+    width: 200px;
+    height: 200px;
     margin: 10px 10px 10px 0px;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .tit{
@@ -649,7 +651,7 @@ select{
     position: absolute;
     transform: translate(-90px, 25px);
     color: #ddd;
-    background: #333;
+    background: #007FFF;
     font-size: 1.02em;
     width: 90px;
     height: 38px;

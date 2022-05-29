@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Interrogate </title>
+        <title> CollabHub </title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/material.css">
@@ -19,15 +19,16 @@
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
-                <div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div>
+                <div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div>
             </div>
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li>Home</li></a>
 			<a href="globalForum.php"><li>Global Forum</li></a>
             <a href="categories.php"><li>Categories</li></a>
-            <a href="contacts.php"><li>Contact</li></a>
             <a href="ask.php"><li id="home">Ask Question</li></a>
+            <a href="contacts.php"><li>Contact</li></a>
+            
             <a href="profile.php"><li>Hi, <?php echo $_SESSION["user"]; ?></li></a>
             <a href="logout.php"><li>Log Out</li></a>
         </ul>
@@ -37,8 +38,8 @@
             <div id="sf">
                 <center>
                     <div class="heading ask">
-                        <h1 class="logo"><div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div></h1>
-                        <p id="tag-line">where questions are themselves the answers</p>
+                        <h1 class="logo"><div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div></h1>
+                        <p id="tag-line">A collaborative platform for teachers</p>
                     </div>
 
                     <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post" enctype="multipart/form-data">
@@ -104,7 +105,7 @@
             }
         
         ?>
-        
+        <br><br>
         <!-- Footer -->
         <div id="footer" style="padding:30px;">
             &copy; 2022 &bull; ISTP Project.

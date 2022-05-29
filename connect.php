@@ -2,7 +2,7 @@
     $server = "localhost";
     $user = "root";
     $password = "";
-    $db = "project";
+    $db = "project_ISTP";
 
     $conn = mysqli_connect($server,$user,$password,$db);
     if(!$conn){

@@ -15,9 +15,9 @@
             $que = "";
             if($_POST["nul"]==0){
                 if(strpos($_POST["preby"],$_SESSION["user"]) === false)
-                    $que = "update quans set answer=CONCAT(answer,'<br>or<br>".$_POST["answer"]."'), answeredby=CONCAT(answeredby,', @ ".$_SESSION["user"]."') where question like '%".$_POST["question"]."%'";
+                    $que = "update quans set answer=CONCAT(answer,'<br>".$_POST["answer"]."'), answeredby=CONCAT(answeredby,', @ ".$_SESSION["user"]."') where question like '%".$_POST["question"]."%'";
                 else
-                    $que = "update quans set answer=CONCAT(answer,'<br>or<br>".$_POST["answer"]."'), answeredby = '".$_SESSION["user"]."' where question like '%".$_POST["question"]."%'";
+                    $que = "update quans set answer=CONCAT(answer,'<br>".$_POST["answer"]."'), answeredby = '".$_SESSION["user"]."' where question like '%".$_POST["question"]."%'";
             }
             else
                 $que = "update quans set answer='".$_POST["answer"]."', answeredby = '".$_SESSION["user"]."' where question like '%".$_POST["question"]."%'";
@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Interrogate </title>
+        <title> CollabHub </title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/material.css">
@@ -69,15 +69,16 @@
         <!-- navigation bar -->
         <a href="index.php">
             <div id="log">
-                <div id="i">i</div><div id="cir">i</div><div id="ntro">nterrogate</div>
+                <div id="i">c</div><div id="cir">.</div><div id="ntro">ollabHub</div>
             </div>
         </a>
         <ul id="nav-bar">
             <a href="index.php"><li>Home</li></a>
 			<a href="globalForum.php"><li>Global Forum</li></a>
             <a href="categories.php"><li id="home">Categories</li></a>
-            <a href="contacts.php"><li>Contact</li></a>
             <a href="ask.php"><li>Ask Question</li></a>
+            <a href="contacts.php"><li>Contact</li></a>
+            
             <?php 
                 if(! isset($_SESSION['user'])){
             ?>
@@ -183,23 +184,28 @@
                                 
                                 <form id="f<?php echo $n; ?>" style="margin-bottom: -25px;" action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post" enctype="multipart/form-data">
 <!--                                    <input type="button" value="Click here to answer." id="ans_b" >-->
-                                    <label style="margin-bottom: -25px;"><a id="ans_b<?php echo $n; ?>" href="#area<?php echo $no; ?>"><u>Submit your answer</u></a></label>
+                                    <label style="margin-bottom: -25px;"><a id="ans_b<?php echo $n; ?>" href="#area<?php echo $no; ?>" ><u>Submit your answer</u></a></label>
                                     <br>
                                     <script>
                                         $(function(){
                                             $('#ans_b<?php echo $n; ?>').click(function(e){
                                                 e.preventDefault();
                                                 $('#area<?php echo $n; ?>').css("display","block");
+                                                $('#myFile<?php echo $n; ?>').css("display","block");
                                                 $('#ar<?php echo $n; ?>').css("display","block");
                                                 $('#f<?php echo $n; ?>').css("margin-bottom","0px");
                                             });
                                         });
                                     </script>
-                                    <textarea id="area<?php echo $n; ?>" name="answer" placeholder="Your Answer..."></textarea>
+                                    
+                                    <textarea id="area<?php echo $n; ?>" name="answer" placeholder="Your Answer..."></textarea><br>
+                                    <input type="file" id="myFile<?php echo $n; ?>" name="filename" style="display: none" value="fileUpload" accept=".jpg, .jpeg, .png">
+   
                                     <input style="display: none;" name="question" value="<?php echo $da['question'] ?>">
                                     <input style="display: none;" name="nul" value="<?php echo $nul ?>">
                                     <input style="display: none;" name="preby" value="<?php echo $da['answeredby'] ?>">
                                     <br>
+                                    
                                     <input type="submit" name="ansubmit" value="Submit" class="up-in ans_sub" id="ar<?php echo $n; ?>">
                                     
                                 </form>
@@ -219,7 +225,7 @@
             </center>
             
         </div><!-- content -->
-        
+        <br><br><br>
         <!-- Footer -->
         <div id="footer">
             &copy; 2022 &bull; ISTP Project.
